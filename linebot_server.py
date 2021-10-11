@@ -30,73 +30,6 @@ handler = WebhookHandler(config.get('line_bot', 'channel_secret'))
 SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
 
 
-# def searchImage(text):
-#     """Shows basic usage of the Drive v3 API.
-#     Prints the names and ids of the first 10 files the user has access to.
-#     """
-#     creds = None
-#     # The file token.json stores the user's access and refresh tokens, and is
-#     # created automatically when the authorization flow completes for the first
-#     # time.
-#     if os.path.exists('token.json'):
-#         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
-#     # If there are no (valid) credentials available, let the user log in.
-#     if not creds or not creds.valid:
-#         if creds and creds.expired and creds.refresh_token:
-#             creds.refresh(Request())
-#         else:
-#             flow = InstalledAppFlow.from_client_secrets_file(
-#                 'credentials.json', SCOPES)
-#             creds = flow.run_local_server(port=0)
-#         # Save the credentials for the next run
-#         with open('token.json', 'w') as token:
-#             token.write(creds.to_json())
-
-#     service = build('drive', 'v3', credentials=creds)
-
-#     # results = service.files().list(q="'1PgaWnboLXh_EdPyqgolYnaI5aCCmOkjT' in parents and name contains '卡'",
-#     #                                fields="nextPageToken, files(id, name)").execute()
-#     # results = service.files().list(q="'1PgaWnboLXh_EdPyqgolYnaI5aCCmOkjT' in parents",
-#     #                                fields="nextPageToken, files(id, name)").execute()
-#     # results = service.files().list(q="'1InldzNFTe418xyyLd_pXMKYHIsi3XEPy' in parents and fullText contains '神奇海螺'", pageSize=1000,
-#     #                                fields="nextPageToken, files(id, name)").execute()
-
-#     results_length = 0
-#     results_url = []
-#     nextPageToken = "first"
-
-#     while nextPageToken != []:
-#         if nextPageToken == "first":
-#             results = service.files().list(q="'1CH7i08P4NK0WkhASe4_qs92fsL2Mz0tM' in parents and fullText contains '{}'".format(text), pageSize=1000,
-#                                            fields="nextPageToken, files(id, name)").execute()
-#         else:
-#             results = service.files().list(q="'1CH7i08P4NK0WkhASe4_qs92fsL2Mz0tM' in parents and fullText contains '{}'".format(text), pageSize=1000, pageToken=nextPageToken,
-#                                            fields="nextPageToken, files(id, name)").execute()
-#         items = results.get('files', [])
-#         nextPageToken = results.get('nextPageToken', [])
-#         print(len(items))
-#         for item in items:
-#             img_url = "https://lh3.googleusercontent.com/d/{}=w1080".format(
-#                 item['id'])
-#             print(u'{0} ({1})'.format(item['name'], img_url))
-
-#             positino_left_brackets = item['name'].find("【")
-#             position_right_brackets = item['name'].find("】")
-#             position_dot = item['name'].find(".jpg")
-#             img_episode = item['name'][positino_left_brackets +
-#                                        1:position_right_brackets]
-#             img_title = item['name'][position_right_brackets+1:position_dot]
-#             if img_title.find(text) != -1:
-#                 results_length += 1
-#                 if len(results_url) < 5:
-#                     results_url.append(
-#                         ImageSendMessage(
-#                             original_content_url=img_url,
-#                             preview_image_url=img_url
-#                         ))
-
-#     return {"length": results_length, "top5_url_list": results_url}
-
 def searchImage(text):
     """Shows basic usage of the Drive v3 API.
     Prints the names and ids of the first 10 files the user has access to.
@@ -121,13 +54,6 @@ def searchImage(text):
 
     service = build('drive', 'v3', credentials=creds)
 
-    # results = service.files().list(q="'1PgaWnboLXh_EdPyqgolYnaI5aCCmOkjT' in parents and name contains '卡'",
-    #                                fields="nextPageToken, files(id, name)").execute()
-    # results = service.files().list(q="'1PgaWnboLXh_EdPyqgolYnaI5aCCmOkjT' in parents",
-    #                                fields="nextPageToken, files(id, name)").execute()
-    # results = service.files().list(q="'1InldzNFTe418xyyLd_pXMKYHIsi3XEPy' in parents and fullText contains '神奇海螺'", pageSize=1000,
-    #                                fields="nextPageToken, files(id, name)").execute()
-
     results_length = 0
     results_message = []
     nextPageToken = "first"
@@ -138,6 +64,8 @@ def searchImage(text):
 
     with open("episode_info.json", 'r', encoding="utf-8") as f:
         episode_info = json.load(f)
+
+    # imageFolder: https://drive.google.com/drive/u/0/folders/1CH7i08P4NK0WkhASe4_qs92fsL2Mz0tM
 
     while nextPageToken != []:
         if nextPageToken == "first":
