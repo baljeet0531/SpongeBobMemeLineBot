@@ -1,0 +1,3 @@
+[line_bot]
+channel_secret = yourLinebotSecret
+channel_access_token = yourLinebotAccessToken

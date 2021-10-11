@@ -1,0 +1,187 @@
+{
+    "type": "bubble",
+    "size": "mega",
+    "hero": {
+        "type": "image",
+        "url": "https://lh3.googleusercontent.com/d/1buvlksSiJP3giAYH5RJwH3YsgKb2ZQ-7=w1080",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "641:486"
+    },
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "沒關係 你慢慢想AAAA",
+                        "weight": "bold",
+                        "size": "lg",
+                        "wrap": true
+                    }
+                ],
+                "flex": 1,
+                "justifyContent": "center"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "維基集數",
+                                "color": "#aaaaaa",
+                                "size": "sm",
+                                "flex": 1,
+                                "wrap": true,
+                                "align": "center",
+                                "gravity": "center"
+                            },
+                            {
+                                "type": "text",
+                                "text": "26-B",
+                                "wrap": true,
+                                "color": "#666666",
+                                "size": "sm",
+                                "flex": 1,
+                                "align": "center",
+                                "gravity": "center"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "Every Spongebob Frame In Order",
+                                "color": "#aaaaaa",
+                                "size": "sm",
+                                "flex": 1,
+                                "wrap": true,
+                                "align": "center",
+                                "gravity": "center"
+                            },
+                            {
+                                "type": "text",
+                                "text": " S2E12",
+                                "wrap": true,
+                                "color": "#666666",
+                                "size": "sm",
+                                "flex": 1,
+                                "align": "center",
+                                "gravity": "center"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "中文集數名稱",
+                                "color": "#aaaaaa",
+                                "size": "sm",
+                                "flex": 1,
+                                "wrap": true,
+                                "align": "center",
+                                "gravity": "center"
+                            },
+                            {
+                                "type": "text",
+                                "text": "章魚哥天堂",
+                                "wrap": true,
+                                "color": "#666666",
+                                "size": "sm",
+                                "flex": 1,
+                                "align": "center",
+                                "gravity": "center"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "英文集數名稱",
+                                "color": "#aaaaaa",
+                                "size": "sm",
+                                "flex": 1,
+                                "wrap": true,
+                                "align": "center",
+                                "gravity": "center"
+                            },
+                            {
+                                "type": "text",
+                                "text": "Squidville",
+                                "wrap": true,
+                                "color": "#666666",
+                                "size": "sm",
+                                "flex": 1,
+                                "align": "center",
+                                "gravity": "center"
+                            }
+                        ]
+                    }
+                ],
+                "spacing": "lg",
+                "flex": 1,
+                "justifyContent": "center",
+                "margin": "lg"
+            }
+        ],
+        "justifyContent": "center",
+        "borderWidth": "light",
+        "backgroundColor": "#f7e948"
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+            {
+                "type": "button",
+                "style": "link",
+                "height": "sm",
+                "action": {
+                    "type": "postback",
+                    "label": "傳圖檔給我",
+                    "displayText": "傳圖檔給我",
+                    "data": "傳"
+                }
+            },
+            {
+                "type": "button",
+                "style": "link",
+                "height": "sm",
+                "action": {
+                    "type": "uri",
+                    "label": "開啟圖檔網址",
+                    "uri": "https://linecorp.com"
+                }
+            }
+        ],
+        "flex": 0
+    },
+    "styles": {
+        "footer": {
+            "backgroundColor": "#ff808b"
+        }
+    }
+}
